@@ -2,212 +2,101 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Snacks Saludables (sin JS)</title>
-  <style>
-    :root {
-      --color-fondo: #f0fdf6;
-      --color-primario: #2c7a57;
-      --color-secundario: #4caf50;
-      --color-texto: #333;
-      --sombra-suave: 0 4px 10px rgba(0, 0, 0, 0.1);
-      --radio: 8px;
-      --transicion: 0.3s ease;
-    }
-
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background-color: var(--color-fondo);
-      color: var(--color-texto);
-      padding: 2rem;
-      margin: 0;
-      margin-top: 60px;
-      line-height: 1.6;
-    }
-
-    header, footer {
-      text-align: center;
-      background-color: var(--color-primario);
-      color: white;
-      padding: 1rem 0;
-      box-shadow: var(--sombra-suave);
-    }
-
-    .inicio {
-      position: fixed;
-      top: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 10;
-    }
-
-    .inicio a button {
-      background-color: var(--color-primario);
-      color: white;
-      border: none;
-      padding: 0.6rem 1.2rem;
-      font-size: 1rem;
-      border-radius: var(--radio);
-      cursor: pointer;
-      box-shadow: var(--sombra-suave);
-      transition: var(--transicion);
-    }
-
-    .inicio a button:hover {
-      background-color: #236344;
-      transform: scale(1.05);
-    }
-
-    .filter-buttons {
-      text-align: center;
-      margin: 2rem 0;
-    }
-
-    input[type="radio"] {
-      display: none;
-    }
-
-    .filter-buttons label {
-      margin: 0.4rem;
-      padding: 0.6rem 1.2rem;
-      background-color: var(--color-secundario);
-      color: white;
-      border-radius: var(--radio);
-      cursor: pointer;
-      transition: var(--transicion);
-      font-weight: bold;
-      display: inline-block;
-    }
-
-    .filter-buttons label:hover {
-      background-color: #3c9441;
-      transform: translateY(-2px);
-    }
-
-    .snack-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
-      padding: 0 1rem;
-    }
-
-    .snack-item {
-      background-color: white;
-      border: 1px solid #ddd;
-      border-radius: var(--radio);
-      box-shadow: var(--sombra-suave);
-      text-align: center;
-      padding: 1rem;
-      transition: var(--transicion);
-      display: none;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .snack-item img {
-      width: 100%;
-      height: 140px;
-      object-fit: cover;
-      border-radius: 5px;
-      margin-bottom: 0.5rem;
-    }
-
-    .snack-item h3 {
-      font-size: 1.1rem;
-      margin: 0.5rem 0 0.3rem;
-      color: var(--color-primario);
-    }
-
-    .snack-item p {
-      font-size: 0.9rem;
-      margin: 0;
-      color: #555;
-    }
-
-    /* Mostrar snacks por categoría */
-    #todos:checked ~ .snack-list .snack-item,
-    #energeticos:checked ~ .snack-list .energeticos,
-    #bajos:checked ~ .snack-list .bajos,
-    #caseros:checked ~ .snack-list .caseros {
-      display: flex;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 3rem;
-    }
-  </style>
+  <title>Snacks Saludables</title>
 </head>
 <body>
 
-  <header>
-    <h1>Snacks Saludables</h1>
-  </header>
+  <h1>Snacks Saludables</h1>
 
-  <div class="inicio">
-    <a href="productos.html"><button>Inicio</button></a>
-  </div>
+  <!-- Navegación por categorías -->
+  <nav>
+    <p><strong>Filtrar por categoría:</strong></p>
+    <ul>
+      <li><a href="#todos">Todos</a></li>
+      <li><a href="#energeticos">Energéticos</a></li>
+      <li><a href="#bajos">Bajos en Calorías</a></li>
+      <li><a href="#caseros">Caseros</a></li>
+    </ul>
+  </nav>
 
-  <!-- Filtros (solo HTML) -->
-  <div class="filter-buttons">
-    <input type="radio" name="filtro" id="todos" checked>
-    <label for="todos">Todos</label>
+  <!-- TODOS -->
+  <h2 id="todos">Todos los Snacks</h2>
+  <ul>
+    <li>
+      <p><strong>Frutos secos</strong> (Energético)</p>
+      <img src="https://tse3.mm.bing.net/th?id=OIP.xsMsozieU2uucEI7ifShfQHaHa&pid=Api&P=0&h=180" alt="Frutos secos" width="200">
+    </li>
+    <li>
+      <p><strong>Banana</strong> (Energético)</p>
+      <img src="https://tse2.explicit.bing.net/th?id=OIP.iFm2DffdX5eMg2LjmcRovQHaEK&pid=Api&P=0&h=180" alt="Banana" width="200">
+    </li>
+    <li>
+      <p><strong>Manzana</strong> (Bajo en calorías)</p>
+      <img src="https://tse4.mm.bing.net/th?id=OIP.0t9FBmyGlqLHGjcLr2f1jAHaE0&pid=Api&P=0&h=180" alt="Manzana" width="200">
+    </li>
+    <li>
+      <p><strong>Zanahoria y apio</strong> (Bajo en calorías)</p>
+      <img src="https://image.freepik.com/foto-gratis/palitos-zanahoria-apio-mesa-madera_188533-448.jpg" alt="Zanahoria y apio" width="200">
+    </li>
+    <li>
+      <p><strong>Chips de kale</strong> (Casero)</p>
+      <img src="https://www.thespruceeats.com/thmb/uZYFThop1RGENr53cNLl0ADgft8=/4680x3132/filters:fill(auto,1)/kale-chips-2215968-hero-5c190ff8c9e77c0001986a3e.jpg" alt="Chips de kale" width="200">
+    </li>
+    <li>
+      <p><strong>Bolitas de avena</strong> (Casero)</p>
+      <img src="https://i.pinimg.com/736x/74/9e/31/749e311181818d0117899c02959765dc.jpg" alt="Bolitas de avena" width="200">
+    </li>
+    <li>
+      <p><strong>Tostadas de aguacate</strong> (Casero)</p>
+      <img src="https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/5a2dab27-8178-47f6-9169-3e8795ba79e6/Derivates/ef5a19b3-a579-4e18-b79c-d18b54da0001.jpg" alt="Tostadas de aguacate" width="200">
+    </li>
+  </ul>
 
-    <input type="radio" name="filtro" id="energeticos">
-    <label for="energeticos">Energéticos</label>
+  <!-- ENERGÉTICOS -->
+  <h2 id="energeticos">Snacks Energéticos</h2>
+  <ul>
+    <li>
+      <p><strong>Frutos secos</strong></p>
+      <img src="https://tse3.mm.bing.net/th?id=OIP.xsMsozieU2uucEI7ifShfQHaHa&pid=Api&P=0&h=180" alt="Frutos secos" width="200">
+    </li>
+    <li>
+      <p><strong>Banana</strong></p>
+      <img src="https://tse2.explicit.bing.net/th?id=OIP.iFm2DffdX5eMg2LjmcRovQHaEK&pid=Api&P=0&h=180" alt="Banana" width="200">
+    </li>
+  </ul>
 
-    <input type="radio" name="filtro" id="bajos">
-    <label for="bajos">Bajos en Calorías</label>
+  <!-- BAJOS EN CALORÍAS -->
+  <h2 id="bajos">Bajos en Calorías</h2>
+  <ul>
+    <li>
+      <p><strong>Manzana</strong></p>
+      <img src="https://tse4.mm.bing.net/th?id=OIP.0t9FBmyGlqLHGjcLr2f1jAHaE0&pid=Api&P=0&h=180" alt="Manzana" width="200">
+    </li>
+    <li>
+      <p><strong>Zanahoria y apio</strong></p>
+      <img src="https://image.freepik.com/foto-gratis/palitos-zanahoria-apio-mesa-madera_188533-448.jpg" alt="Zanahoria y apio" width="200">
+    </li>
+  </ul>
 
-    <input type="radio" name="filtro" id="caseros">
-    <label for="caseros">Caseros</label>
-  </div>
-
-  <!-- Lista de Snacks -->
-  <div class="snack-list">
-    <!-- Energéticos -->
-    <div class="snack-item energeticos">
-      <img src="https://tse3.mm.bing.net/th?id=OIP.xsMsozieU2uucEI7ifShfQHaHa&pid=Api&P=0&h=180" alt="Frutos secos">
-      <h3>Frutos secos</h3>
-      <p>Ricos en energía y proteínas.</p>
-    </div>
-    <div class="snack-item energeticos">
-      <img src="https://tse2.explicit.bing.net/th?id=OIP.iFm2DffdX5eMg2LjmcRovQHaEK&pid=Api&P=0&h=180" alt="Banana">
-      <h3>Banana</h3>
-      <p>Ideal para antes de hacer ejercicio.</p>
-    </div>
-
-    <!-- Bajos en Calorías -->
-    <div class="snack-item bajos">
-      <img src="https://image.freepik.com/foto-gratis/palitos-zanahoria-apio-mesa-madera_188533-448.jpg" alt="Palitos de zanahoria y apio">
-      <h3>Zanahoria y apio</h3>
-      <p>Frescos y bajos en calorías.</p>
-    </div>
-    <div class="snack-item bajos">
-      <img src="https://tse4.mm.bing.net/th?id=OIP.0t9FBmyGlqLHGjcLr2f1jAHaE0&pid=Api&P=0&h=180" alt="Manzana">
-      <h3>Manzana</h3>
-      <p>Práctica, saludable y deliciosa.</p>
-    </div>
-
-    <!-- Caseros -->
-    <div class="snack-item caseros">
-      <img src="https://www.thespruceeats.com/thmb/uZYFThop1RGENr53cNLl0ADgft8=/4680x3132/filters:fill(auto,1)/kale-chips-2215968-hero-5c190ff8c9e77c0001986a3e.jpg" alt="Chips de kale">
-      <h3>Chips de kale</h3>
-      <p>Caseros, crujientes y muy nutritivos.</p>
-    </div>
-    <div class="snack-item caseros">
-      <img src="https://i.pinimg.com/736x/74/9e/31/749e311181818d0117899c02959765dc.jpg" alt="Bolitas de avena">
-      <h3>Bolitas de avena</h3>
-      <p>Pequeñas y llenas de energía.</p>
-    </div>
-    <div class="snack-item caseros">
-      <img src="https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/5a2dab27-8178-47f6-9169-3e8795ba79e6/Derivates/ef5a19b3-a579-4e18-b79c-d18b54da0001.jpg" alt="Tostadas de aguacate">
-      <h3>Tostadas de aguacate</h3>
-      <p>Verde, sana y llena de sabor.</p>
-    </div>
-  </div>
+  <!-- CASEROS -->
+  <h2 id="caseros">Snacks Caseros</h2>
+  <ul>
+    <li>
+      <p><strong>Chips de kale</strong></p>
+      <img src="https://www.thespruceeats.com/thmb/uZYFThop1RGENr53cNLl0ADgft8=/4680x3132/filters:fill(auto,1)/kale-chips-2215968-hero-5c190ff8c9e77c0001986a3e.jpg" alt="Chips de kale" width="200">
+    </li>
+    <li>
+      <p><strong>Bolitas de avena</strong></p>
+      <img src="https://i.pinimg.com/736x/74/9e/31/749e311181818d0117899c02959765dc.jpg" alt="Bolitas de avena" width="200">
+    </li>
+    <li>
+      <p><strong>Tostadas de aguacate</strong></p>
+      <img src="https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/5a2dab27-8178-47f6-9169-3e8795ba79e6/Derivates/ef5a19b3-a579-4e18-b79c-d18b54da0001.jpg" alt="Tostadas de aguacate" width="200">
+    </li>
+  </ul>
 
   <footer>
-    <p>Gracias por visitar la sección de snacks saludables 🍏</p>
+    <p>Gracias por visitar nuestra página de snacks saludables 🍎</p>
   </footer>
 
 </body>
