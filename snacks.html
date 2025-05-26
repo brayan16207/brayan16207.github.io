@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Snacks Saludables con Filtro</title>
+  <title>Snacks Saludables (sin JS)</title>
   <style>
     :root {
       --color-fondo: #f0fdf6;
@@ -30,16 +30,6 @@
       color: white;
       padding: 1rem 0;
       box-shadow: var(--sombra-suave);
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
-
-    footer p {
-      margin: 0;
-      font-size: 1rem;
     }
 
     .inicio {
@@ -72,19 +62,23 @@
       margin: 2rem 0;
     }
 
-    .filter-buttons button {
+    input[type="radio"] {
+      display: none;
+    }
+
+    .filter-buttons label {
       margin: 0.4rem;
       padding: 0.6rem 1.2rem;
-      border: none;
       background-color: var(--color-secundario);
       color: white;
       border-radius: var(--radio);
       cursor: pointer;
       transition: var(--transicion);
       font-weight: bold;
+      display: inline-block;
     }
 
-    .filter-buttons button:hover {
+    .filter-buttons label:hover {
       background-color: #3c9441;
       transform: translateY(-2px);
     }
@@ -104,14 +98,9 @@
       text-align: center;
       padding: 1rem;
       transition: var(--transicion);
-      display: flex;
+      display: none;
       flex-direction: column;
       align-items: center;
-    }
-
-    .snack-item:hover {
-      transform: scale(1.03);
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
     }
 
     .snack-item img {
@@ -133,6 +122,19 @@
       margin: 0;
       color: #555;
     }
+
+    /* Mostrar snacks por categoría */
+    #todos:checked ~ .snack-list .snack-item,
+    #energeticos:checked ~ .snack-list .energeticos,
+    #bajos:checked ~ .snack-list .bajos,
+    #caseros:checked ~ .snack-list .caseros {
+      display: flex;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+    }
   </style>
 </head>
 <body>
@@ -145,13 +147,22 @@
     <a href="productos.html"><button>Inicio</button></a>
   </div>
 
+  <!-- Filtros (solo HTML) -->
   <div class="filter-buttons">
-    <button onclick="filtrar('todos')">Todos</button>
-    <button onclick="filtrar('energeticos')">Energéticos</button>
-    <button onclick="filtrar('bajos')">Bajos en Calorías</button>
-    <button onclick="filtrar('caseros')">Caseros</button>
+    <input type="radio" name="filtro" id="todos" checked>
+    <label for="todos">Todos</label>
+
+    <input type="radio" name="filtro" id="energeticos">
+    <label for="energeticos">Energéticos</label>
+
+    <input type="radio" name="filtro" id="bajos">
+    <label for="bajos">Bajos en Calorías</label>
+
+    <input type="radio" name="filtro" id="caseros">
+    <label for="caseros">Caseros</label>
   </div>
 
+  <!-- Lista de Snacks -->
   <div class="snack-list">
     <!-- Energéticos -->
     <div class="snack-item energeticos">
@@ -198,15 +209,6 @@
   <footer>
     <p>Gracias por visitar la sección de snacks saludables 🍏</p>
   </footer>
-
-  <script>
-    function filtrar(categoria) {
-      const snacks = document.querySelectorAll('.snack-item');
-      snacks.forEach(snack => {
-        snack.style.display = (categoria === 'todos' || snack.classList.contains(categoria)) ? 'flex' : 'none';
-      });
-    }
-  </script>
 
 </body>
 </html>
